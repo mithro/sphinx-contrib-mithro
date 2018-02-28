@@ -55,7 +55,7 @@ def relative(parent_dir, child_path):
     return os.path.relpath(child_path, start=parent_dir)
 
 
-class MarkdownCodeSymlinks(transform.AutoStructify, object):
+class MarkdownLinks(transform.AutoStructify, object):
     docs_root_dir = os.path.realpath(os.path.dirname(__file__))
     code_root_dir = os.path.realpath(os.path.join(docs_root_dir, "..", ".."))
 

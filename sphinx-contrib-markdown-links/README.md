@@ -32,14 +32,14 @@ source_parsers = {
 source_suffix = ['.rst', '.md']
 
 # Replace the `AutoStructify` app.add_transform with the following;
-from markdown_code_symlinks import MarkdownCodeSymlinks
+from markdown_links import MarkdownLinks
 def setup(app):
-    MarkdownCodeSymlinks.find_links()
+    MarkdownLinks.find_links()
     app.add_config_value(
         'recommonmark_config', {
             'github_code_repo': 'https://github.com/<youruser>/<yourrepo>',
         }, True)
-    app.add_transform(MarkdownCodeSymlinks)
+    app.add_transform(MarkdownLinks)
 ```
 
 When running, the build should output something like the following now;
