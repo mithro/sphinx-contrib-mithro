@@ -55,9 +55,23 @@ def relative(parent_dir, child_path):
     return os.path.relpath(child_path, start=parent_dir)
 
 
+docs_build_parent = os.path.realpath(os.path.dirname(__file__))
+while docs_build_parent:
+    docs_build_parent, bit = os.path.split(docs_build_parent)
+    if bit == "_build":
+        break
+
+
+def find_dotgit(path):
+    while path:
+        if os.path.exists(os.path.join(path, '.git')):
+            return path
+        path, bit = os.path.split(path)
+
+
 class MarkdownLinks(transform.AutoStructify, object):
-    docs_root_dir = os.path.realpath(os.path.dirname(__file__))
-    code_root_dir = os.path.realpath(os.path.join(docs_root_dir, "..", ".."))
+    docs_root_dir = docs_build_parent
+    code_root_dir = find_dotgit(docs_root_dir)
 
     mapping = {
         'docs2code': {},
