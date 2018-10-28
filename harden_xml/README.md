@@ -14,6 +14,18 @@ It does the following things;
  * Patches minidom.parse so that if an XML file fails to parse, it will rerun
    the XML through lxml with error recovery to create valid XML.
 
+# Install
+
+You can install it either via;
+```shell
+pip install -e "git+https://github.com/mithro/sphinx-contrib-mithro#egg=harden_xml&subdirectory=harden_xml"
+```
+
+Or add the following to your `requirements.txt`
+```
+-e git+https://github.com/mithro/sphinx-contrib-mithro#egg=harden_xml&subdirectory=harden_xml
+```
+
 # Set Up
 
 Just import [`harden_xml`](harden_xml.py) in your `conf.py` file *before*

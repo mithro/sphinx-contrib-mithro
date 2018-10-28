@@ -16,6 +16,18 @@ The code also makes relative links between two Markdown documents found inside
 the Sphinx documentation work even if there relative positions are now totally
 different.
 
+# Install
+
+You can install it either via;
+```shell
+pip install -e "git+https://github.com/mithro/sphinx-contrib-mithro#egg=sphinx-contrib-markdown-links&subdirectory=sphinx-contrib-markdown-links"
+```
+
+Or add the following to your `requirements.txt`
+```
+-e git+https://github.com/mithro/sphinx-contrib-mithro#egg=sphinx-contrib-markdown-links&subdirectory=sphinx-contrib-markdown-links
+```
+
 # Set Up
 
 ```python

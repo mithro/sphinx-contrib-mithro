@@ -6,6 +6,18 @@ one time.
 This is useful if you want to import multiple sets of third party documentation
 or have multiple separate code bases as part of your repo.
 
+# Install
+
+You can install it either via;
+```shell
+pip install -e "git+https://github.com/mithro/sphinx-contrib-mithro#egg=sphinx-contrib-exhale-multiproject&subdirectory=sphinx-contrib-exhale-multiproject"
+```
+
+Or add the following to your `requirements.txt`
+```
+-e git+https://github.com/mithro/sphinx-contrib-mithro#egg=sphinx-contrib-exhale-multiproject&subdirectory=sphinx-contrib-exhale-multiproject
+```
+
 # Set Up
 
 ```python
