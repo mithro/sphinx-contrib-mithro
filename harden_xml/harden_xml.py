@@ -17,6 +17,8 @@ It does the following things;
 
 """
 
+import force_unicode
+
 # Monkey patch codecs.open to default to our errors='replacer' when errors
 # isn't specified.
 import codecs
