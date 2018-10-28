@@ -128,10 +128,12 @@ Current Value: {}
     def _url_resolver(self, ourl):
         """Resolve a URL found in a markdown file."""
         assert self.docs_root_dir == os.path.realpath(self.root_dir), """\
+When processing '{}'
+
 Configuration error! Document Root != Current Root
 Document Root: {}
  Current Root: {}
-""".format(self.docs_root_dir, self.root_dir)
+""".format(ourl, self.docs_root_dir, self.root_dir)
 
         src_path = os.path.abspath(self.document['source'])
         src_dir = os.path.dirname(src_path)
