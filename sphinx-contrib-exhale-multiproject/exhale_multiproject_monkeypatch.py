@@ -76,6 +76,10 @@ from pprint import pprint
 def exhale_environment_ready(app):
     default_project = app.config.breathe_default_project
     default_exhale_args = dict(app.config.exhale_args)
+
+    exhale_projects_args = dict(app.config._raw_config['exhale_projects_args'])
+    breathe_projects = dict(app.config._raw_config['breathe_projects'])
+
     for project in breathe_projects:
         app.config.breathe_default_project = project
         os.makedirs(breathe_projects[project], exist_ok=True)
